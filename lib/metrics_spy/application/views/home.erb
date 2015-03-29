@@ -1,0 +1,10 @@
+
+<% @all_metrics.each do |metric| %>
+    <article>
+      <p>
+        <%= metric.data %>
+      </p>
+      <p class="meta">Created: <%= Time.parse(metric.created_at.to_s).rfc822 %></p>
+    </article>
+
+<% end %>
