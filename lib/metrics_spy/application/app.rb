@@ -27,11 +27,18 @@ class MetricsSpy < Sinatra::Base
   set :public_folder, File.expand_path('..', __FILE__) # set up the static dir (with images/js/css inside)
 
   set :views,  File.expand_path('../views', __FILE__) # set up the views dir
+
+  configure :production do
+    enable :logging
+    set :server, %w[thin mongrel webrick]
+    set :port, 9191
+    puts 'Metrics Spy :: Production Environment'
+  end
+
   configure :development do
     set :server, %w[thin mongrel webrick]
     set :port, 9191
     enable :logging
-
     puts 'Metrics Spy :: Development Environment'
   end
 
