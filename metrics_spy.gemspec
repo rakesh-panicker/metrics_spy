@@ -5,6 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'metrics_spy/version'
 
 Gem::Specification.new do |spec|
+
   spec.name = 'metrics_spy'
   spec.version = MetricsSpy::VERSION
   spec.authors = ["Rakesh Panicker"]
@@ -21,6 +22,10 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "sinatra", "~> 1.4"
   spec.add_runtime_dependency "data_mapper", "~> 1.2"
   spec.add_runtime_dependency "dm-sqlite-adapter", "~> 1.2"
+  spec.add_runtime_dependency "sinatra-contrib", "~> 1.4"
+  spec.add_runtime_dependency "daemons", "~> 1.1"
+  spec.add_runtime_dependency "sequel", "~> 4.7"
+  spec.add_runtime_dependency "sqlite3", "~> 1.3"
 
   spec.add_development_dependency "json_spec", "~> 1.1"
   spec.add_development_dependency "bundler", "~> 1.5"
